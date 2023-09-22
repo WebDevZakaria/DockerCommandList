@@ -1,0 +1,76 @@
+1-docker run node // to run image from dockerhub
+
+2-docker ps -a //show all the container that runs in the past
+
+3-docker ps // show the current running container
+
+4-docker run -it node // here the terminal will run us node terminal that we can excute node command on it
+
+5- docker --help // show all the command available for docker
+
+6-docker start [name of the container] // to restart an execting container
+
+FROM node
+
+WORKDIR /app  // to show that the  RUN npm install run where the /app folder found
+
+COPY . /app  // copy code from  local to   /app image
+
+RUN npm install  // run this command in the image
+
+EXPOSE 80 //port 
+
+CMD ["node", "server.js"] // this to run the container
+
+7-docker build .  // to build the image
+
+8-docker run -p 3000:80 [image id] //to run the container and keep the terminal stuck
+
+9- docker run -p 3000:80 -d [image id] //here to run but the terminal close to let you write what you want(detached mode)
+
+10 -docker attach [container name] // to back to role number 8
+
+11-docker logs [container name] // here if you you are in the detached mode you can use this to see the logs in the website(the console and what the terminal show when you submit some thing)
+
+12-docker stop [container name] // to stop the runnig container
+
+13-docker run -it [image-id] // run docker that has no web servers and have input and output
+
+14 docker start -a -i [container name] //restart container and  in attached mode 
+
+15-docker images     //show all images
+
+16-docker rmi [image id] //to delete the image
+
+17-docker image prune //to remove all the images
+
+18-docker container prune //remove all docker container
+
+19 -docker run -p 3000:80 -d --rm [image id] //run container in detached mode and remove it ones you exit
+
+20-docker cp dummy/. [container name]:/test     //copy somthing new to an already container
+
+21-docker  [container name]:/test/test.txt dummy   //this is the opposite of the previous command you copy file from container to your local project
+
+22-docker run -p 3000:80 -d --rm --name [give a name to the container ] [image id] // to give a name to container
+
+23-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
